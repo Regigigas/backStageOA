@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="main.css" />
+		<style>
+			.header{
+				height: 40px;
+				width: 900px;
+				margin: 0 auto 50px;
+			}
+			#box{
+				width: 300px;
+				height: 30px;
+				border: 1px solid black;
+				float: left;
+				margin-left:500px;
+			}
+			#box li{
+				float: left;
+				list-style: none;
+				display: inline-block;
+				padding: 0 5px;
+			}
+			#box li.active{
+				color: red;
+				background: skyblue;
+			}
+			#box ul{
+				/*float: left;*/
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>		 		 
+		<ul class="shoplist clearfix" id="main">
+			<!--<li>
+				<img src="img/1.jpg" alt="" />
+				<p>小米1</p>
+				<p>999</p>
+				<button>购买</button>
+			</li>-->
+		</ul>	
+		<div id="box">
+			<span id="left">上一页</span>
+			<ul id="u">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+			<span id="right">下一页</span>
+		</div>
+	</body>
+</html>
+<script src="ajax.js"></script>
+<script type="text/javascript">
+	var main = document.getElementById("main");
+	var oUl = document.getElementById("u");
+	var oLeft = document.getElementById("left");
+	var oRight = document.getElementById("right");
+	var index = 1;//页码 默认显示第一页
+	var pageNum = 4;// 每页显示数据量
+	getData();
+	function getData(){
+		var url = "data.json";
+		ajaxGet(url,fn);
+		function fn(msg){
+			var arr = JSON.parse(msg);
+			var str = "";
+			for( var i = (index-1)*4 ; i < index*4 ; i++ ){
+				//末尾页下标可能会出现越界    解决  判断变量  i  不能大于数组中最大下标  
+				if( i < arr.length ){
+					str += `<li>
+								<img src="img/${ arr[i].src }" alt="" />
+								<p>${ arr[i].name }</p>
+								<p>${ arr[i].price }</p>
+								<button>购买</button>
+							</li>`;
+				}
+			}
+			main.innerHTML = str;
+			
+			//计算总页数   
+			pageTotal = Math.ceil(arr.length / pageNum);
+			var page = "";
+			//重新设置页码
+			for( var j = 1 ; j <= pageTotal ; j++ ){
+				page += `<li>${j}</li>`;
+			}
+			oUl.innerHTML = page;
+			oUl.children[index-1].className = "active";
+		}
+		
+	}
+	/*
+	pageNum=4
+	 页码index
+	    （index-1）*4   index*4
+	 1   0   		 4
+	 2   4   		 8
+	 3   8   		 12
+	 4   12  		 16
+	  
+	 末尾页下标可能会出现越界    解决  判断变量  i  不能大于数组中最大下标  
+	 */
+	//操作页码显示当前页
+	oUl.onclick = function(e){
+		var e = e || event;
+		var target = e.target || e.srcElement;
+		if( target.nodeName.toLowerCase() == "li" ){
+			index = target.innerHTML;
+			getData();
+		}
+	}
+	
+	//下一页
+	oRight.onclick = function(){
+		if( index == pageTotal ){
+			index = pageTotal;
+			alert("已经是最后一页了");
+		}else{
+			index++;
+		}
+		getData();
+	}
+	//上一页
+	oLeft.onclick = function(){
+		if( index == 1 ){
+			index = 1;
+			alert("已经是第一页了");
+		}else{
+			index--;
+		}
+		getData();
+	}
+</script>

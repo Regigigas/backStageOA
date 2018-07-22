@@ -1,0 +1,106 @@
+[
+	{
+		"id" : "shop01",
+		"name" : "小米1",
+		"src" : "9.jpg",
+		"price" : "999"
+	},
+	{
+		"id" : "shop02",
+		"name" : "小米2",
+		"src" : "2.jpg",
+		"price" : "999"
+	},
+	{
+		"id" : "shop03",
+		"name" : "小米3",
+		"src" : "3.jpg",
+		"price" : "999"
+	},
+	{
+		"id" : "shop04",
+		"name" : "小米4",
+		"src" : "4.jpg",
+		"price" : "999"
+	},
+	{
+		"id" : "shop05",
+		"name" : "小米5",
+		"src" : "5.jpg",
+		"price" : "999"
+	},
+	{
+		"id" : "shop06",
+		"name" : "小米6",
+		"src" : "6.jpg",
+		"price" : "999"
+	},
+	{
+		"id" : "shop07",
+		"name" : "小米7",
+		"src" : "7.jpg",
+		"price" : "999"
+	},
+	{
+		"id" : "shop08",
+		"name" : "小米8",
+		"src" : "8.jpg",
+		"price" : "999"
+	},
+	{
+		"id" : "shop09",
+		"name" : "小米9",
+		"src" : "9.jpg",
+		"price" : "999"
+	},
+	{
+		"id" : "shop10",
+		"name" : "小米10",
+		"src" : "10.jpg",
+		"price" : "999"
+	},
+	{
+		"id" : "shop01",
+		"name" : "小米11",
+		"src" : "9.jpg",
+		"price" : "999"
+	},
+	{
+		"id" : "shop02",
+		"name" : "小米12",
+		"src" : "2.jpg",
+		"price" : "999"
+	},
+	{
+		"id" : "shop03",
+		"name" : "小米13",
+		"src" : "3.jpg",
+		"price" : "999"
+	},
+	{
+		"id" : "shop02",
+		"name" : "小米14",
+		"src" : "2.jpg",
+		"price" : "999"
+	},
+	{
+		"id" : "shop03",
+		"name" : "小米15",
+		"src" : "3.jpg",
+		"price" : "999"
+	},
+	{
+		"id" : "shop02",
+		"name" : "小米16",
+		"src" : "2.jpg",
+		"price" : "999"
+	},
+	{
+		"id" : "shop03",
+		"name" : "小米17",
+		"src" : "3.jpg",
+		"price" : "999"
+	}
+	
+]
+	
