@@ -8,6 +8,6 @@ $.extend(Page.prototype, {
   },
   createHeader: function() {
     var headerContainer = $(".js-header");
-    this.header = new Header(headerContainer);
+    this.header = new Header(headerContainer, 0);
   }
 })

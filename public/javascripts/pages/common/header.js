@@ -1,5 +1,6 @@
-function Header(headerContainer) {
+function Header(headerContainer, index) {
   this.headerContainer = headerContainer;
+  this.selectedIndex = index;
   this.init();
 }
 
@@ -17,8 +18,8 @@ Header.template = `
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="/">个人<span class="sr-only">(current)</span></a></li>
+        <ul class="nav navbar-nav js-left">
+          <li><a href="/">个人<span class="sr-only">(current)</span></a></li>
           <li><a href="/htmls/notice.html">通知</a></li>
           <li><a href="javascripts:;">流程</a></li>
           <li><a href="javascripts:;">文档</a></li>
@@ -41,12 +42,18 @@ Header.template = `
 $.extend(Header.prototype, {
   init: function() {
     this.createDom();
+    this.setSelected();
     this.createLoginInfo();
   },
   createDom: function() {
     this.element = $(Header.template);
     this.rightArea = this.element.find(".js-right")
     this.headerContainer.append(this.element)
+  },
+  setSelected: function() {
+    var leftArea = this.element.find(".js-left"),
+        leftItems = leftArea.find("li");
+    leftItems.eq(this.selectedIndex).addClass("active");
   },
   createLoginInfo: function() {
     $.ajax({

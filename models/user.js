@@ -6,7 +6,7 @@ var User = mongoose.model('User', {
 });
 
 module.exports = {
-  register: function(userName, password, cb) {
+  register (userName, password, cb) {
     var regUser = new User({
       userName: userName,
       password: password
@@ -16,7 +16,7 @@ module.exports = {
       cb(err)
     });
   },
-  findUser: function(findParams, cb) {
+  findUser (findParams, cb) {
     User.findOne(findParams).then((result) => {
       console.log(result);
       cb(result);

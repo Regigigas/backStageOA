@@ -2,7 +2,7 @@ const userModel = require('../models/user.js')
 const crypto = require("crypto");
 
 module.exports = {
-  register: (req, res) => {
+  register (req, res) {
     const {userName, password} = req.body;
     const hash = crypto.createHash("sha256");
     hash.update(password);
@@ -30,7 +30,7 @@ module.exports = {
       }
     })
   },
-  login: (req, res) => {
+  login (req, res) {
     const {userName, password} = req.body;
     const hash = crypto.createHash("sha256");
 
@@ -51,7 +51,7 @@ module.exports = {
       })
     })
   },
-  isLogin: (req, res) => {
+  isLogin (req, res) {
     res.json({
       ret: true,
       data: {
@@ -59,7 +59,7 @@ module.exports = {
       }
     })
   },
-  logout: function(req, res) {
+  logout (req, res) {
     req.session = null; // 清空session_id
     res.json({
       ret: true,
