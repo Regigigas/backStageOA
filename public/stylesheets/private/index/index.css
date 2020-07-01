@@ -1,3 +1,17 @@
+body {
+	background: url(/imgs/longinIndex.jpg) no-repeat fixed 0;
+	background-size: cover;
+}
+
+.login-box {
+	width: 400px;
+	height: 300px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform:translateX(-50%) translateY(-50%);
+	background: rgba(0, 0, 0, 0.5);
+}
 .sectionCommon {
   width: 300px;
   height: 500px;

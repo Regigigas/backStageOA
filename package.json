@@ -15,5 +15,18 @@
     "jade": "~1.11.0",
     "mongoose": "^4.13.14",
     "morgan": "~1.9.0"
-  }
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Regigigas/backStageOA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Regigigas/backStageOA/issues"
+  },
+  "homepage": "https://github.com/Regigigas/backStageOA#readme",
+  "devDependencies": {},
+  "description": ""
 }

@@ -14,22 +14,14 @@ Header.template = `
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="javascripts:;">办公自动化</a>
       </div>
 
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav js-left">
-          <li><a href="/">个人<span class="sr-only">(current)</span></a></li>
-          <li><a href="/htmls/notice.html">通知</a></li>
-          <li><a href="javascripts:;">流程</a></li>
-          <li><a href="javascripts:;">文档</a></li>
-          <li><a href="javascripts:;">报告</a></li>
-          <li><a href="javascripts:;">项目</a></li>
-          <li><a href="javascripts:;">资产</a></li>
-          <li><a href="javascripts:;">人事</a></li>
-          <li><a href="javascripts:;">客户</a></li>
-          <li><a href="javascripts:;">采购</a></li>
-          <li><a href="javascripts:;">系统</a></li>
+      <div class="nav nav-tabs nav-justified" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-left js-left">
+          <li><a href="/" class="">首页</a></li>
+          <li><a href="/htmls/notice.html" class="">通知</a></li>
+          <li><a href="javascripts:;" class="">采购</a></li>
+          <li><a href="javascripts:;" class="">系统</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right js-right">
           
@@ -52,7 +44,7 @@ $.extend(Header.prototype, {
   },
   setSelected: function() {
     var leftArea = this.element.find(".js-left"),
-        leftItems = leftArea.find("li");
+      leftItems = leftArea.find("li");
     leftItems.eq(this.selectedIndex).addClass("active");
   },
   createLoginInfo: function() {

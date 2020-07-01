@@ -62,8 +62,8 @@ $.extend(Register.prototype, {
   },
   handleSubmitBtnClick: function() {
     var userName = this.element.find(".js-user").val(),
-        password = this.element.find(".js-pass").val();
-        
+      password = this.element.find(".js-pass").val();
+
     $.ajax({
       url: "/api/register",
       type: "POST",
