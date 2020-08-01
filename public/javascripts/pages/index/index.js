@@ -4,10 +4,10 @@ function Page() {
 
 $.extend(Page.prototype, {
 	init: function() {
-		// this.createLoginBox();
+		this.createRegisterBox();
 	},
-	createLoginBox: function() {
-		var loginBoxContainer = $(".js-loginBox");
-		this.loginBox = new loginBox(loginBoxContainer, 0);
+	createRegisterBox: function() {
+		var registerContainer = $(".js-register");
+		this.Register = new Register(registerContainer, 1);
 	}
 })
